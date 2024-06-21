@@ -1,14 +1,7 @@
 /** @type {import('next').NextConfig} */
+const {i18n} = require('./next-i18next.config.js')
 const nextConfig = {
-    i18n: {
-        defaultLocale: 'en',
-        locales: ['en', 'de'],
-    },
-    /** To avoid issues when deploying to some paas (vercel...) */
-    localePath:
-        typeof window === 'undefined'
-            ? require('path').resolve('./public/locales')
-            : '/locales',
+    i18n,
 };
 
-export default nextConfig;
+module.exports = nextConfig
